@@ -1,0 +1,15 @@
+.main-content {
+  min-height: 100vh;
+
+  margin-left: 72px;
+
+  transition: margin-left 220ms ease;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+
+    padding-bottom: 70px;
+  }
+}
