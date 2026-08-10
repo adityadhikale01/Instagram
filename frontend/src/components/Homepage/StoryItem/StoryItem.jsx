@@ -19,6 +19,8 @@ function StoryItem({ story, isOwnStory = false }) {
         )}
       </div>
 
+      
+
       <span className="story-username">
         {isOwnStory ? "Your story" : story.username}
       </span>
