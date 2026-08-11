@@ -1,0 +1,188 @@
+/* =========================================
+   STORY ITEM
+========================================= */
+
+.story {
+  width: 96px;
+  min-width: 96px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   STORY RING
+========================================= */
+
+.story-ring {
+  width: 80px;
+  height: 80px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 25%;
+
+  /*
+    Blue → purple Instagram-like story ring
+  */
+
+  background:
+    linear-gradient(
+      135deg,
+      #3268ff 0%,
+      #6a91ff 25%,
+      #8d7fff 35%,
+      #c56fff 50%,
+      #e56fff 65%,
+      #f56fff 75%,
+      #f56fff 100%
+    );
+}
+
+
+/* Own story */
+
+.story-ring-own {
+  background:
+    linear-gradient(
+      135deg,
+      #2f6df6 0%,
+      #426fff 100%
+    );
+}
+
+
+/* =========================================
+   WHITE BORDER AROUND IMAGE
+========================================= */
+
+.story-image-wrapper {
+  width: 100%;
+  height: 100%;
+
+  padding: 3px;
+
+  border-radius: 25%;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   STORY IMAGE
+========================================= */
+
+.story-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 25%;
+}
+
+
+/* =========================================
+   STORY NAME
+========================================= */
+
+.story-name {
+  width: 100%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  text-align: center;
+
+  color: #667085;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 18px;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.story:hover .story-ring {
+  transform: scale(1.035);
+}
+
+.story-ring {
+  transition: transform 160ms ease;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .story {
+    width: 58px;
+    min-width: 58px;
+
+    gap: 4px;
+  }
+
+  .story-ring {
+    width: 52px;
+    height: 52px;
+
+    padding: 3px;
+  }
+
+  .story-image-wrapper {
+    padding: 2px;
+  }
+
+  .story-name {
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .story {
+    width: 58px;
+    min-width: 58px;
+  }
+
+  .story-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .story-name {
+    font-size: 8px;
+  }
+}

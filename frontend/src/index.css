@@ -1,0 +1,17 @@
+/* the all css is added to add good styling to the app and to make it look more like instagram
+general font and color is added to the app to make it look more like instagram and to give it a good look and feel */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #182033;
+}

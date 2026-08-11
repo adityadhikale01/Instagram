@@ -1,0 +1,100 @@
+/* =========================================
+   STORY BAR
+========================================= */
+
+.story-bar {
+  width: 100%;
+
+  margin-top: 24px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   STORY LIST
+========================================= */
+
+.story-list {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 0 2px 8px;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.story-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================
+   DESKTOP STORY WIDTH
+========================================= */
+
+@media (min-width: 1025px) {
+
+  .story-list {
+    gap: 16px;
+
+    /*
+      Allows stories to remain horizontal
+      without stretching them.
+    */
+    justify-content: flex-start;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .story-bar {
+    margin-top: 20px;
+  }
+
+  .story-list {
+    gap: 12px;
+
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .story-bar {
+    margin-top: 14px;
+
+    /*
+      Important for the screenshot:
+      stories continue horizontally outside
+      the visible screen.
+    */
+    overflow: hidden;
+  }
+
+  .story-list {
+    gap: 10px;
+
+    padding: 0 10px 5px;
+  }
+}
