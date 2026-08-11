@@ -1,8 +1,12 @@
 .main-content {
   min-height: 100vh;
 
-  margin-left: 72px;
+  margin-left: 99px;
+  display: flex;  
 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: margin-left 220ms ease;
 }
 

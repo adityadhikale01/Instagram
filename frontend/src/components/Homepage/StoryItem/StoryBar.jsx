@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import StoryItem from "./StoryItem";
+import CurrUserStoryBtn from "./CurrUserStoryBtn";
 import "./StoryBar.css";
 
 const stories = [
@@ -66,7 +67,7 @@ function StoryBar() {
       behavior: "smooth",
     });
   };
-
+  // Mock current user story
   const currentUser = {
     username: "aditya_dev",
     avatar: "https://i.pravatar.cc/150?img=68",
@@ -75,6 +76,7 @@ function StoryBar() {
 
   return (
     <section className="story-bar">
+      {/* // Scroll buttons and story list */}
       <button
         className="story-scroll-button story-scroll-left"
         onClick={() => scrollStories("left")}
@@ -84,7 +86,7 @@ function StoryBar() {
       </button>
 
       <div className="story-list" ref={storyContainerRef}>
-        <StoryItem story={currentUser} isOwnStory />
+        <CurrUserStoryBtn story={currentUser} haveOwnStory={true} />
 
         {stories.map((story) => (
           <StoryItem key={story.id} story={story} />
