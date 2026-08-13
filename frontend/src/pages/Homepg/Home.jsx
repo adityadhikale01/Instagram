@@ -6,7 +6,6 @@ import getGreeting from "../../utils/greeting";
 import { useAuth } from "../../context/AuthContext";
 export default function Home() {
   const date = new Date();
-
   const formattedDate = date.toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",

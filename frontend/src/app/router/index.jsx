@@ -16,8 +16,8 @@ import CollegeFeed from "../../pages/CollageFeed";
 import Marketplace from "../../pages/Marketplace";
 import Profile from "../../pages/Profile";
 import Settings from "../../pages/Settings";
-
-
+import LoginPage from "../../pages/loginPg/LoginPage.jsx";
+import RegisterPage from "../../pages/RegisterPg/RegisterPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +68,18 @@ const router = createBrowserRouter([
         path: "settings",
         element: <Settings />,
       },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "register",
+        element: <RegisterPage />,
+      },
+      {
+        path: "*",
+        element: <h1>404</h1>,
+      }
     ],
   },
 ]);
