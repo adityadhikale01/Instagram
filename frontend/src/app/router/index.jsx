@@ -5,7 +5,7 @@ import {
 
 import MainLayout from "../../layouts/MainLayout";
 
-import Home from "../../pages/Home";
+import Home from "../../pages/Homepg/Home.jsx";
 import Reels from "../../pages/Reels";
 import Explore from "../../pages/Explore";
 import Messages from "../../pages/Messages";

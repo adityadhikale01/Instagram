@@ -1,0 +1,22 @@
+.home-date{
+    color: #6e6e71 !important;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0 0 0 0 !important;
+}
+.home-header h1{
+    color: #101828;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0 !important;
+}
+.home-header{
+    margin:0 !important;
+    padding:0;
+}

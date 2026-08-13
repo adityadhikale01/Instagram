@@ -1,19 +1,127 @@
-.main-content {
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.main-layout {
+  width: 100%;
   min-height: 100vh;
 
-  margin-left: 99px;
-  display: flex;  
-
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: margin-left 220ms ease;
+  /*
+    Prevent the layout itself from creating
+    horizontal overflow.
+  */
+  overflow-x: hidden;
 }
 
-@media (max-width: 768px) {
+
+/* =========================================================
+   MAIN CONTENT
+   DESKTOP
+========================================================= */
+
+.main-content {
+  /*
+    Sidebar width is 72px in its collapsed state.
+  */
+  width: calc(100% - 72px);
+
+  min-height: 100vh;
+
+  margin-left: 72px;
+
+  /*
+    Important:
+    Allow the Outlet page to define its own
+    internal layout.
+  */
+  display: block;
+
+  /*
+    Prevent children from forcing the page
+    wider than the available content area.
+  */
+  min-width: 0;
+  max-width: 100%;
+
+  /*
+    Prevent horizontal page overflow.
+  */
+  overflow-x: hidden;
+
+  transition:
+    margin-left 220ms ease,
+    width 220ms ease;
+}
+
+
+/* =========================================================
+   DESKTOP
+   1025px+
+========================================================= */
+
+@media (min-width: 1025px) {
+
   .main-content {
+    /*
+      Sidebar collapsed = 72px
+    */
+    width: calc(100% - 72px);
+
+    margin-left: 72px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   769px - 1024px
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .main-content {
+    /*
+      Your tablet sidebar is 68px.
+    */
+    width: calc(100% - 68px);
+
+    margin-left: 68px;
+
+    min-width: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   0 - 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .main-content {
+    /*
+      Desktop sidebar disappears.
+    */
+    width: 100%;
+
     margin-left: 0;
 
+    min-height: 100vh;
+
+    /*
+      Space for the fixed bottom navigation.
+    */
     padding-bottom: 70px;
+
+    /*
+      Prevent content from touching the viewport edge.
+      Remove this if your individual pages already
+      handle horizontal padding.
+    */
+    min-width: 0;
   }
+
 }

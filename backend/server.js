@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.config.js";
+import authRoutes from "./routes/auth.routes.js";
+
 
 dotenv.config();
 
@@ -18,22 +20,22 @@ app.get("/", (req, res) => {
     message: "Server is running",
   });
 });
-app.get("/api/login", (req, res) => {
-    console.login("Login route accessed");
-    res.status(200).json({  
-        success: true,
-        message: "Login route is working",
-    });
-});
-app.post("/api/register", (req, res) => {
-    console.log("Register route accessed");
-    res.status(200).json({
-        success: true,
-        message: "Register route is working",
-    });
-});
+// app.get("/api/login", (req, res) => {
+//     console.login("Login route accessed");
+//     res.status(200).json({  
+//         success: true,
+//         message: "Login route is working",
+//     });
+// });
+// app.post("/api/register", (req, res) => {
+//     console.log("Register route accessed");
+//     res.status(200).json({
+//         success: true,
+//         message: "Register route is working",
+//     });
+// });
 
-
+app.use("/api/auth", authRoutes);
 
 // Global error handler
 app.use((err, req, res, next) => {
