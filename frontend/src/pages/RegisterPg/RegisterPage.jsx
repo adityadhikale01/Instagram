@@ -1,43 +1,16 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigation ,Form,useActionData} from "react-router-dom";
 
 import { useAuth } from "../../context/AuthContext";
 
 import "./RegisterPage.css";
 
 export default function RegisterPage() {
-  const { register } = useAuth();
-  const navigate = useNavigate();
+  const actionData = useActionData();
+  const navigation = useNavigation();
+  const error = actionData?.error || null;
+  const isSubmitting = navigation.state === "submitting";
 
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    fullName: "",
-  });
-
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      setError("");
-
-      await register(formData);
-
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
 
   return (
     <main className="register-page">
@@ -46,23 +19,25 @@ export default function RegisterPage() {
         <div className="register-page-card">
 
           <h1 className="register-page-logo">
-            Instagram
+            Conexa
           </h1>
 
           <p className="register-page-subtitle">
             Sign up to see photos and videos from your friends.
           </p>
-
-          <form
+        {actionData?.error && (
+          <div className="form-error">
+            {actionData.error}
+          </div>
+        )}
+          <Form
+          method="post"
             className="register-page-form"
-            onSubmit={handleSubmit}
           >
             <input
               className="register-page-input"
               name="fullName"
               placeholder="Full name"
-              value={formData.fullName}
-              onChange={handleChange}
               autoComplete="name"
             />
 
@@ -70,8 +45,7 @@ export default function RegisterPage() {
               className="register-page-input"
               name="username"
               placeholder="Username"
-              value={formData.username}
-              onChange={handleChange}
+             
               autoComplete="username"
             />
 
@@ -80,8 +54,7 @@ export default function RegisterPage() {
               name="email"
               type="email"
               placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
+              
               autoComplete="email"
             />
 
@@ -90,8 +63,7 @@ export default function RegisterPage() {
               name="password"
               type="password"
               placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
+           
               autoComplete="new-password"
             />
 
@@ -105,9 +77,9 @@ export default function RegisterPage() {
               className="register-page-button"
               type="submit"
             >
-              Sign up
+            {isSubmitting ? "Creating account..." : "Create account"}
             </button>
-          </form>
+          </Form>
 
           <div className="register-page-divider">
             <span className="register-page-divider-line"></span>

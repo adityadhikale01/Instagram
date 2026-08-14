@@ -44,7 +44,7 @@ export default function LoginPage() {
         <div className="login-page-card">
 
           <h1 className="login-page-logo">
-            Instagram
+            Conexa
           </h1>
 
           <p className="login-page-subtitle">
