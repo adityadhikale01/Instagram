@@ -3,7 +3,7 @@ import PostCard from "../../components/posts/PostCard";
 import { posts } from "../../DumyData/post"; 
 import "./Home.css";
 import getGreeting from "../../utils/greeting";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../auth/useAuth";
 export default function Home() {
   const date = new Date();
   const formattedDate = date.toLocaleDateString("en-US", {
